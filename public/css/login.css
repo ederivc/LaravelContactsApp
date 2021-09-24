@@ -1,0 +1,113 @@
+.login {
+    height: 420px;
+    width: 900px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.login__info {
+    width: 60%;
+    padding: 2rem;
+}
+
+.login__info label {
+    font-weight: 600;
+}
+
+.login__info span:first-child {
+    font-size: 2rem;
+    font-weight: 700;
+    display: block;
+    text-align: center !important;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.login__link {
+    display: block;
+    font-size: 14px;
+}
+
+.login__link a {
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.login__link a:hover {
+    color: #475569;
+}
+
+.login__btn {
+    width: 100px;
+    z-index: 1;
+    position: relative;
+    color: #fff;
+    outline: none;
+    border: none;
+    background-color: #0f172a;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.login__btn::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 100%;
+    right: 100%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #1e293b;
+    transform-origin: center;
+    transform: translate3d(50%, -50%, 0) scale3d(0, 0, 0);
+    transition: transform 0.45s ease-in-out;
+}
+
+.login__btn:hover {
+    background-color: #0f172a;
+}
+
+.login__btn:hover::before {
+    transform: translate3d(50%, -50%, 0) scale3d(18, 50, 50);
+}
+
+.login__img {
+    width: 40%;
+}
+
+.login__img img {
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+}
+
+@media (max-width: 950px) {
+    .login {
+        width: 80%;
+    }
+    .login span {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .login {
+        flex-direction: column;
+        height: 380px;
+    }
+    .login__info {
+        width: 100%;
+    }
+
+    .login__img {
+        display: none;
+    }
+}
