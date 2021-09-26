@@ -22,14 +22,18 @@
       <span class="hamburger"></span>
     </div>
     <ul class="navbar__menu">
+      @auth
+      <li>
+        <a href="" class=" navbar__link">{{ auth()->user()->name }}</a>
+      </li>
+      @endauth
       <li><a href="{{ route('login') }}" class="navbar__link">Login</a></li>
-      <li><a href="#" class="navbar__link">Register</a></li>
+      <li><a href="{{ route('register') }}" class="navbar__link">Register</a></li>
     </ul>
   </nav>
 
-  <div class="content">
-    @yield('content')
-  </div>
+  @yield('content')
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
   </script>

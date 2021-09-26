@@ -1,0 +1,8 @@
+.register__wrapper input {
+    height: 3rem !important;
+}
+
+.register__wrapper label {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
