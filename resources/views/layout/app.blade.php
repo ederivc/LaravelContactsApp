@@ -14,7 +14,7 @@
 <body>
   <nav class="navbar">
     <div class="navbar__brand">
-      <img src="img/logo.svg" alt="logo" />
+      <img src="{{URL::asset('/img/logo.svg')}}" alt="logo" />
     </div>
     <div class="navbar__hamburger menu-toggle" id="nav__hamburger">
       <span class="hamburger"></span>

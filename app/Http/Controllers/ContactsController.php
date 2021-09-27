@@ -13,17 +13,42 @@ class ContactsController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(Contacts $contacts, Request $request)
+    public function index(User $user)
     {
-        $user = $request->user;
-        echo gettype($request->user()->contacts);
-        dd($request->user()->contacts);
+        $contacts = Contacts::select('name', 'phone', 'address', 'image_path')
+            ->where('user_id', $user->id)->get();
 
-        // dd(::find()->contacts
-        //     ->where('user_id', 8));
-        // $contacts = Contacts::all();
+        return view('contacts.app')->with('contacts', $contacts);
+    }
 
-        return view('contacts.app');
-        // return view('contacts.app')->with('contacts', $contacts);
+    public function create()
+    {
+        return view('contacts.add');
+    }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => ['required'],
+            'phone' => ['required'],
+            'address' => ['required'],
+            'image' => ['required', 'mimes:jpg,png,jpeg',  'max:5048'],
+        ]);
+
+        $imgName = $request->file('image')->getClientOriginalName();
+
+        $newImageName = time() . '-' . $request->name . $imgName;
+
+        $request->image->move(public_path('img'), $newImageName);
+
+        Contacts::create([
+            'user_id' => auth()->user()->id,
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'image_path' => $newImageName
+        ]);
+
+        return redirect()->route('contacts', ['user' => auth()->user()]);
     }
 }

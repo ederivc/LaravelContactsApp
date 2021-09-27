@@ -4,9 +4,12 @@
 
 body,
 .login__wrapper,
-.register__wrapper {
+.register__wrapper,
+.contacts__wrapper {
     background-color: #f3f4f6;
     height: calc(100vh - 70px);
+    max-width: 1900px;
+    margin: auto;
 }
 
 .login__wrapper {
