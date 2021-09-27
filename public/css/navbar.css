@@ -27,11 +27,12 @@
 
 .navbar__menu {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
     list-style: none;
     text-align: center;
-    width: 300px;
+    width: 350px;
     justify-self: end;
+    padding-right: 2rem;
 }
 
 .navbar__link {

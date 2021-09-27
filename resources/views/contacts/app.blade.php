@@ -1,13 +1,14 @@
 @extends('layout.app')
 
 @section('content')
-<div class="container-fluid contacts__wrapper d-flex flex-column align-items-around">
+<div class="container-fluid contacts__wrapper">
   <h1 class="text-center pt-5 title">My Contacts</h1>
-  <div class="row pt-5">
+  <div class="row pt-4">
     @if($contacts->count())
     <div class="row col-9 d-flex">
+      {{-- <div class="row"> --}}
       @foreach ($contacts as $contact)
-      <div class="col col-sm-6 col-lg-3 mx-5">
+      <div class="col col-sm-6 col-lg-4 pt-3">
         <div class="card" style="width: 18rem;">
           <img src="{{ URL::asset('/img/' . $contact->image_path ) }}" class="card-img-top mx-auto"
             alt="{{ $contact->image_path . 'image' }}" style="width: 6rem; height: 6rem;">
@@ -21,6 +22,7 @@
         </div>
       </div>
       @endforeach
+      {{-- </div> --}}
     </div>
     @else
     <div class="col-9 d-flex justify-content-center">

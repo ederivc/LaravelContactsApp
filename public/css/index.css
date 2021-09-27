@@ -1,8 +1,10 @@
 @import url("navbar.css");
+@import url("home.css");
 @import url("login.css");
 @import url("register.css");
 
 body,
+.home__wrapper,
 .login__wrapper,
 .register__wrapper,
 .contacts__wrapper {

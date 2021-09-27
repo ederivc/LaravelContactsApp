@@ -1,0 +1,67 @@
+.carousel,
+.carousel-item {
+    height: calc(100vh - 70px);
+    max-height: 1000px;
+    max-width: 1900px;
+}
+
+.carousel-caption {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+    border-top: 4px solid #0f172a;
+    color: #444444;
+}
+
+.orangeBtn {
+    width: auto;
+    max-width: 170px;
+    cursor: pointer;
+}
+
+.orangeBtn button {
+    width: 100%;
+    padding: 0.4rem 1.5rem;
+    background-color: #fe7f31;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+}
+
+.orangeBtn a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.orangeBtn a:hover {
+    color: #fff !important;
+}
+
+.orangeBtn button::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fb6c0d;
+    transform-origin: center right;
+    transform: scaleX(0);
+    transition: transform 0.25s ease-in-out;
+    border-radius: 3px;
+}
+
+.orangeBtn button:hover::before {
+    transform-origin: center left;
+    transform: scaleX(1);
+}

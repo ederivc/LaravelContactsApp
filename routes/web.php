@@ -17,7 +17,7 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
 
-Route::get('/account', [AccountController::class, 'index'])->name('account');
+Route::get('/{user:name}/account', [AccountController::class, 'index'])->name('account');
 
 Route::get('/{user:name}/contacts', [ContactsController::class, 'index'])->name('contacts');
 Route::get('/{user:name}/contacts/addContact', [ContactsController::class, 'create'])->name('contacts.add');
