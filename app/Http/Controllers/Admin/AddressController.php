@@ -13,6 +13,21 @@ class AddressController extends Controller
         return view('admin.address');
     }
 
+    public function show()
+    {
+        $address = Address::all(
+            'address_id',
+            'city',
+            'address',
+            'cardinality',
+            'size',
+            'image_path',
+            'description',
+        );
+
+        return view('admin.showAddress')->with('address', $address);
+    }
+
     public function store(Request $request)
     {
         $request->validate([
@@ -33,7 +48,7 @@ class AddressController extends Controller
         $addressId = substr($request->city, 0, 3) . substr($request->address, 0, 2) . rand(0, 1000000);
 
         Address::create([
-            'id' => $addressId,
+            'address_id' => $addressId,
             'city' => $request->city,
             'address' => $request->address,
             'cardinality' => $request->cardinality,

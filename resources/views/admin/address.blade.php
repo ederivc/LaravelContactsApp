@@ -1,7 +1,4 @@
-{{-- @extends('adminlte::page') --}}
 @extends('admin.index')
-
-@section('title', 'Contacts App Admin')
 
 @section('content_header')
 <h1 class="title text-center pt-3">Add Address</h1>

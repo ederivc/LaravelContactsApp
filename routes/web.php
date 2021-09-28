@@ -8,7 +8,6 @@ use App\Http\Controllers\auth\LogoutController;
 use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', [HomePageController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');

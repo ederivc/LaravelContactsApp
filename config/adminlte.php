@@ -242,7 +242,7 @@ return [
         //     'text' => 'search',
         // ],
         // [
-        //     'text' => 'blog',
+        //     'text' => 'blasasasog',
         //     'url'  => 'admin/blog',
         //     'can'  => 'manage-blog',
         // ],
@@ -255,25 +255,31 @@ return [
         // ],
         ['header' => 'POSTS'],
         [
-            'text' => 'Agregar direcciones',
+            'text' => 'Add Address',
             'route' => 'address',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Direcciones',
-            'url'  => 'admin/settings',
+            'text' => 'Address',
+            'route'  => 'showAddress',
             'icon' => 'fas fa-fw fa-list',
         ],
         ['header' => 'CARRUSEL'],
         [
-            'text' => 'Agregar imágen',
+            'text' => 'Add Image',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Imágenes',
+            'text' => 'Images',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-images',
+        ],
+        ['header' => 'WEBSITE'],
+        [
+            'text' => 'Show website',
+            'url' => '/',
+            'icon' => 'fas fa-fw fa-pager',
         ],
         // [
         //     'text'    => 'multilevel',

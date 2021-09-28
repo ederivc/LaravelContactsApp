@@ -49,6 +49,7 @@
     </button>
   </div>
 
+  @if ($address -> count())
   <h1 class="text-center my-5">IMÁGENES</h1>
   <section class="cards">
     <div class="container-fluid cards__container">
@@ -61,21 +62,23 @@
         justify-content-center
       ">
           <div class="card" style="width: 20rem">
-            <img src="https://naranti.mx/wp-content/uploads/2021/06/Telcel-corta.jpg" class="card-img-top" alt="..." />
+            <img src="{{ URL::asset('/img/' . $address->image_path ) }}" class="card-img-top"
+              alt="{{ $address->image_path }}" style="height: 10rem; padding: 1rem;" />
             <div class="card-body">
-              <h5 class="card-title">Direccion - {{ $address->id }}</h5>
+              <h5 class="card-title">Direccion - #{{ $address->address_id }}</h5>
               <div class="orangeBtn">
-                <button data-bs-toggle="modal" data-bs-target="#modalCard1">
-                  Conocer más
+                <button data-bs-toggle="modal" data-bs-target="#{{ $address->address_id }}">
+                  Details
                 </button>
               </div>
             </div>
-            <div class="modal fade" id="modalCard1" tabindex="-1" aria-labelledby="modalCard1Label" aria-hidden="true">
+            <div class="modal fade" id="{{ $address->address_id }}" tabindex="-1" aria-labelledby="modalCard1Label"
+              aria-hidden="true">
               <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                   <div class="modal-header d-flex justify-content-between">
                     <h5 class="modal-title" id="modalCard1Label">
-                      Espectacular #UOP99A | <strong>Naranti</strong>
+                      Espectacular #{{ $address->address_id }} | <strong>Naranti</strong>
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
@@ -91,20 +94,22 @@
                     align-items-center
                   ">
                       <div class="col pb-2 pt-0 pr-lg-1 pb-lg-0">
-                        <img src="https://naranti.mx/wp-content/uploads/2021/06/Telcel-corta.jpg" class="card-img-top"
-                          alt="..." />
+                        <img src="{{ URL::asset('/img/' . $address->image_path ) }}" class="card-img-top"
+                          alt="{{ $address->image_path }}" style="height: 20rem;" />
                       </div>
                       <div class="col d-flex flex-column py-2 pl-lg-1">
                         <strong class="especificacionesTitle">Especificaciones</strong>
                         <div class="especificacionesDetail py-1">
-                          <strong>Dirección: </strong><span>Carretera Internacional al Sur, Rancho los
-                            Gavilanes, C.P. 00000</span>
+                          <strong>City: </strong><span>{{ $address->city }}</span>
                         </div>
                         <div class="especificacionesDetail py-1">
-                          <strong>Medidas: </strong><span>12.20 x 6.00 mts</span>
+                          <strong>Address: </strong><span>{{ $address->address }}</span>
                         </div>
                         <div class="especificacionesDetail py-1">
-                          <strong>Cardinalidad: </strong><span>Norte</span>
+                          <strong>Cardinality: </strong><span>{{ $address->cardinality }}</span>
+                        </div>
+                        <div class="especificacionesDetail py-1">
+                          <strong>Size: </strong><span>{{ $address->size }}</span>
                         </div>
                       </div>
                     </div>
@@ -112,7 +117,7 @@
                   <div class="modal-footer">
                     <div class="orangeBtn">
                       <button>
-                        <a href="espectacular.html">Conocer más</a>
+                        <a href="espectacular.html">Details</a>
                       </button>
                     </div>
                   </div>
@@ -125,5 +130,6 @@
       </div>
     </div>
   </section>
+  @endif
 </div>
 @endsection
