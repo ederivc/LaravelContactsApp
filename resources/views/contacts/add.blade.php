@@ -28,16 +28,13 @@
     </div>
     <div class="row my-3">
       <div class="col-12 col-md-6">
-        <label for="address" class="form-label">Address</label>
-        <input type="text" class="form-control" id="address" name="address">
-      </div>
-      <div class="col-12 col-md-6">
         <label for="image" class="form-label">Image</label>
         <input type="file" class="form-control" id="image" name="image">
       </div>
       <div class="col d-flex justify-content-end mt-3">
         <button type="submit" class="btn btn-primary login__btn py-2">Register</button>
       </div>
+    </div>
   </form>
 </div>
 @endsection

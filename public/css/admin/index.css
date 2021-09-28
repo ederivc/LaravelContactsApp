@@ -1,0 +1,33 @@
+.title {
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 80px;
+    height: 2px;
+    background: #0f172a;
+    bottom: -10px;
+    left: calc(50% - 40px);
+}
+
+.main-sidebar,
+.main-header {
+    background-color: #1f2937;
+}
+
+.content-wrapper {
+    background-color: #f6f6fa;
+}
+
+input {
+    height: 2.5rem !important;
+}
+
+.custom__btn {
+    width: 80px;
+    border: none;
+    background-color: #1f2937 !important;
+}

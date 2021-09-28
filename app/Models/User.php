@@ -48,4 +48,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Contacts::class);
     }
+
+    public function adminlte_image()
+    {
+        return 'https://picsum.photos/300/300';
+    }
 }

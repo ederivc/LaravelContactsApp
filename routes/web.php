@@ -4,15 +4,17 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\auth\LoginController;
 use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\auth\LogoutController;
+use App\Http\Controllers\HomePageController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('home.app');
-});
+Route::get('/', [HomePageController::class, 'index']);
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LogoutController::class, 'index'])->name('logout');
 
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store']);
