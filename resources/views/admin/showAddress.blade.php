@@ -36,7 +36,8 @@
             alt="{{ $address->image_path }}" style="height: 2rem;" /></td>
         <td>{{ $address->description }}</td>
         <td>
-          <a href=""><button type="button" class="btn btn-warning"><i class="fas fa-edit"></i></button></a>
+          <a href="{{ route('editAddress', $address) }}"><button type="button" class="btn btn-warning"><i
+                class="fas fa-edit"></i></button></a>
           <button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button>
         </td>
       </tr>

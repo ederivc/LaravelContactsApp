@@ -59,4 +59,29 @@ class AddressController extends Controller
 
         return redirect()->route('admin');
     }
+
+    public function edit(Address $address)
+    {
+        return view('admin.editAddress')->with('address', $address);
+    }
+
+    public function update(Address $address, Request $request)
+    {
+
+        $request->validate([
+            'image' => ['mimes:jpg,png,jpeg',  'max:5048'],
+        ]);
+
+        $address::where('address_id', $address->address_id)
+            ->update([
+                'city' => $request->city,
+                'address' => $request->address,
+                'cardinality' => $request->cardinality,
+                'size' => $request->size,
+                'description' => $request->description
+            ]);
+
+
+        return back()->with('status', 'Profile updated!');
+    }
 }
